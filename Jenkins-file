@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Git link') {
+        stage('Git checkout') {
             steps {
                 git branch: 'main', credentialsId: 'Github', url: 'https://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@github.com/Raam043/Jenkins-Declarative.git'
             }
