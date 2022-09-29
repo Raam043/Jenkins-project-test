@@ -1,0 +1,53 @@
+
+Open new Github repo with has 2 or more branches
+add "Jenkinsfile" onto repo
+edit file with below code
+=============================================================
+pipeline {
+
+  agent any
+
+  options {
+
+    buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')
+
+  }
+
+  stages {
+
+    stage('Hello') {
+
+      steps {
+
+        sh '''
+
+          java -version
+
+        '''
+
+      }
+
+    }
+
+  }
+
+}
+============================================================================
+Save it and go to Jenkins
+
+
+Add jenkins plugin "Pipeline: Multibranch"  to enable multibranch project
+
+Create new project on "Mutlibranch Pipeline"
+
+Display Name = Multibranch-pipeline
+
+**Branch Source**
+Select "Git"
+
+
+Project Repository = https://github.com/Raam043/Jenkins-Declarative.git
+
+**Build Configuration***
+Mode = by Jenkinsfile
+Script Path= Jenkinsfile
