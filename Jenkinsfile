@@ -19,9 +19,6 @@ pipeline {
           java -version
 
         '''
-       
-        }
-      }
 
       }
 
