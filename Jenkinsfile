@@ -10,7 +10,7 @@ pipeline {
 
   stages {
 
-    stage('Hello') {
+    stage('Ramesh') {
 
       steps {
 
@@ -19,9 +19,7 @@ pipeline {
           java -version
 
         '''
-         stage('Test') { 
-        steps { 
-           sh 'echo "testing application..."'
+       
         }
       }
 
