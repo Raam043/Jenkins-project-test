@@ -1,28 +1,29 @@
-pipeline { 
-  
-   agent any
+pipeline {
 
-   stages {
-   
-     stage('Install Dependencies') { 
-        steps { 
-           sh 'npm install' 
-        }
-     }
-     
-     stage('Test') { 
-        steps { 
-           sh 'echo "testing application..."'
-        }
+  agent any
+
+  options {
+
+    buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')
+
+  }
+
+  stages {
+
+    stage('Hello') {
+
+      steps {
+
+        sh '''
+
+          java -version
+
+        '''
+
       }
 
-         stage("Deploy application") { 
-         steps { 
-           sh 'echo "deploying application..."'
-         }
+    }
 
-     }
-  
-   	}
+  }
 
-   }
+}
