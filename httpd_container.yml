@@ -2,13 +2,7 @@
 - hosts: rnb
   become: True
   tasks:
-  
-    - name: Run docker container
-
-
-
-
-      
+   
     - name: Run docker container
       docker_container:
         name: WebServer
