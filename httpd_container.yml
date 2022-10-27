@@ -5,9 +5,9 @@
   
     - name: Run docker container
       command: "subscription-manager repos --enable rhel-server-rhscl-7-rpms"
-      command: "yum install python27-python-pip -y"
-      command: "scl enable python27 bash"
-      command: "pip install --upgrade pip"
+      command: "yum -y install rh-python36"
+      command: "scl enable rh-python36 bash"
+      command: "pip3 install --upgrade pip"
 
 
       
