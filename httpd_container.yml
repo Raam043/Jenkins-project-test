@@ -5,7 +5,7 @@
   
     - name: Run docker container
       command: "yum install pip -y"
-      command: "pip3 install docker-py"
+      command: "pip install docker-py"
 
       
     - name: Run docker container
