@@ -20,4 +20,4 @@
       
     - name: docker rename
       command: "docker tag nginx:latest raam043/nginx_project:v2"
-      command: "docker run -d --name raam043/nginx_project:v2 -p 80:80 raam043/nginx_project:v2
+      command: "docker run -d --name raam043/nginx_project:v2 -p 80:80 raam043/nginx_project:v2"
