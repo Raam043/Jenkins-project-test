@@ -4,8 +4,8 @@
   tasks:
   
     - name: Run docker container
-      command: "yum install pip -y"
-      command: "pip install docker-py"
+      command: "yum update -y"
+
 
       
     - name: Run docker container
