@@ -11,7 +11,7 @@
     - name: Copy website to the host
       copy:
         src: ./index.html
-        dest: /usr/share/nginx/html
+        dest: /usr/share/nginx/html/
       
     - name: docker rename
       command: "docker tag nginx:latest raam043/nginx_project:latest"
