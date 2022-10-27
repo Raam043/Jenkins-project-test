@@ -4,10 +4,8 @@
   tasks:
   
     - name: Run docker container
-      command: "subscription-manager repos --enable rhel-server-rhscl-7-rpms"
-      command: "yum -y install rh-python36"
-      command: "scl enable rh-python36 bash"
-      command: "pip3 install --upgrade pip"
+      command: "interpreter_python = /usr/bin/python"
+
 
 
       
