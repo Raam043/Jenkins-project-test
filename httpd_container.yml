@@ -4,7 +4,10 @@
   tasks:
   
     - name: Run docker container
-      command: "yum update -y"
+      command: "subscription-manager repos --enable rhel-server-rhscl-7-rpms"
+      command: "yum install python27-python-pip -y"
+      command: "scl enable python27 bash"
+      command: "pip install --upgrade pip"
 
 
       
