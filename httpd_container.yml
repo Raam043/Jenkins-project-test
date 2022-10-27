@@ -15,3 +15,5 @@
         - "80"
         ports:
         - "80:80"
+    - name: Stop running container
+      command: "docker rename raam043/test_project:latest raam043/test_project:v2"
