@@ -13,5 +13,3 @@
         ports:
         - "80:80"
    
-   - name: Rename the container
-     command: "docker rename raam043/test_project:latest raam043/test_project:v2"
