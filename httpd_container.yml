@@ -9,6 +9,7 @@
       command: "systemctl start docker"
       command: "yum install pip -y"
       command: "pip3 install docker-py"
+      command: "pip install docker"
       
     - name: Run docker container
       docker_container:
