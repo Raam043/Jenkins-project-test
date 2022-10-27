@@ -4,6 +4,8 @@
   tasks:
   
     - name: Run docker container
+      command: "docker stop raam043/test_project:latest"
+    - name: Run docker container
       docker_container:
         name: WebServer
         image: raam043/test_project:latest
