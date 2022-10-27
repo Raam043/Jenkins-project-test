@@ -18,14 +18,15 @@ pipeline {
         stage('Docker Conatiner run') {
             steps {
                 sh 'docker run -d --name docker_ramesh -p 80:80 docker_ramesh'
-                sh 'docker tag docker_ramesh raam043/httpd_project:latest'
+                sh 'docker tag docker_ramesh raam043/test_project:latest'
             }
         }
-        stage('Image push to DockerHub') {
+        stage('Image push to DockerHub & Deploying on Ansible nodes') {
             steps {
                 withCredentials([string(credentialsId: 'DP', variable: 'DP')]) {
                     sh 'docker login -u raam043 -p ${DP}'
-                    sh 'docker push raam043/httpd_project:latest'
+                    sh 'docker push raam043/test_project:latest'
+                    ansiblePlaybook credentialsId: 'Ansible-private-key', disableHostKeyChecking: true, installation: 'ansible', inventory: 'nodes.inv', playbook: 'httpd_container.yml'
             }
         }
         }
