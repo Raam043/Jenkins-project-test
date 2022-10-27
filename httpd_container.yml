@@ -9,16 +9,3 @@
       command: "systemctl start docker"
       command: "yum install pip -y"
       command: "pip install docker-py"
-      command: "docker stop raam043/test_project:latest"
-      command: "docker rm -f raam043/test_project:latest"
-      command: "docker image rm -f raam043/test_project:latest"
-      
-    - name: Run docker container
-      docker_container:
-        name: WebServer
-        image: raam043/test_project:latest
-        state: started
-        exposed_ports:
-        - "80"
-        ports:
-        - "80:80"
