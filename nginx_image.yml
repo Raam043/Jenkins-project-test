@@ -3,6 +3,11 @@
   become: True
   tasks:
   
+    - name: Delete old images
+      command: "docker stop raam043/nginx_project:latest"
+      command: "docker rm -f raam043/nginx_project:latest"
+      command: "docker image rm -f raam043/nginx_project:latest"
+      
     - name: Pull nginx docker image
       docker_image:
         name: nginx
