@@ -11,7 +11,7 @@
     - name: Run docker container
       docker_container:
         name: WebServer
-        image: raam043/test_project:latest
+        image: raam043/ansible_test:latest
         state: started
         exposed_ports:
         - "80"
