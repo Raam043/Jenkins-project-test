@@ -2,7 +2,11 @@
 - hosts: rnb
   become: True
   tasks:
-             
+  
+    - name: Run docker container  
+      command: "docker stop raam043/myapp"
+      command: "docker rm -f raam043/myapp"
+      command: "docker image rm -f raam043/myapp"
     - name: Run docker container
       docker_container:
         name: WebServer
